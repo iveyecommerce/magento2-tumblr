@@ -3,9 +3,9 @@
 ## About
 Magento 2 extension which allows to display post from tumblr on your store pages.
 
-## How to install
+## How to install?
 
-1. Add the following code to your magento 2 package.json
+1) Add the following code to your magento 2 package.json
 ```json
 {
     "repositories": [
@@ -19,10 +19,14 @@ Magento 2 extension which allows to display post from tumblr on your store pages
     }
 }
 ```
-2. Execute following commands
+
+2) Execute following commands
 ```bash
   composer update
   bin/magento cache:clean
   bin/magento module:enable Ivey_Tumblr
-  bin/magento 
+  bin/magento setup:upgrade
 ```
+
+3) In store contiguration under Ivey/Flickr configure your access keys for tumblr api and name of the blog.
+
