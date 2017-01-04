@@ -1,0 +1,55 @@
+<div class="hpb-main pad-main">
+    <div class="block-title-main">
+        <h2>Latest Posts</h2>
+        <div class="title-border"></div>
+    </div>
+    <div style="margin: 0 -10px;">
+        <div class="hpb-main hpb-slider">
+            <?php foreach ($block->getPostsList() as $post): ?>
+            <div class="hpb-inner">
+                <div class="hpb-img" style="width:400px;height:250px;overflow:hidden;">
+                    <a href="<?= $post->getUrl(); ?>">
+                        <img class="img-resp center-b" src="<?= $post->getImageUrl(); ?>" alt="<?= $post->getTitle(); ?>" />
+                    </a>
+                </div>
+                <div class="hpb-content-main">
+                    <div class="hpb-content">
+                        <h2><?= $post->getTitle(); ?></h2>
+                        <p><?= $post->getBody(); ?></p>
+                    </div>
+                    <div class="hpb-info">
+                        <span class="hpb-poster">
+                            <i class="fa fa-user"></i>
+                            <em><?= $post->getAuthor(); ?></em>
+                        </span>
+                        <span class="hpb-poster">
+                            <i class="fa fa-calendar"></i>
+                            <em><?= $post->getDate(); ?></em>
+                        </span>
+                        <span class="readmore">
+                            <a href="<?= $post->getUrl(); ?>">Read More</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <script type="text/javascript" xml="space">
+            require(['jquery', 'cpowlcarousel'], function ($) {
+                $(document).ready(function () {
+                    $(".hpb-slider").owlCarousel({
+                        items: 3,
+                        itemsDesktop: [1080, 3],
+                        itemsDesktopSmall: [860, 3],
+                        itemsTablet: [768, 2],
+                        itemsTabletSmall: [639, 2],
+                        itemsMobile: [479, 1],
+                        pagination: false,
+                        navigationText: ['<div class="lft-btn"><i class="fa fa-angle-left"></i></div>', '<div class="rgt-btn"><i class="fa fa-angle-right"></div>'],
+                        navigation: true,
+                    });
+                });
+            });
+        </script>
+    </div>
+</div>

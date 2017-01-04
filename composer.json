@@ -1,0 +1,8 @@
+{
+    "name": "ivey/magento2-tumblr",
+    "type": "magento2-module",
+    "license": "MIT",
+    "require": {
+        "tumblr/tumblr": "^0.2.0"
+    }
+}
